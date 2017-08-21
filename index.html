@@ -13,29 +13,59 @@
 <body>
 
     <div class="container"> 
-        <h1>Lessons from Peter Drucker</h1>
+        
+        <h1>To-Do List</h1>
 
-        <article>
-            <h3>Focus on Contribution</h3>
-            <p id="text">
-                To be effective, get in the habit of asking yourself “What can I contribute?”  Whether it’s in a meeting, during a crisis, or when responding to email, ask yourself this question and you’ll be working as effectively as possible.
-            </p>
-            <p>
-                By focusing on the work you can do, and not the power you’re supposed to have, or whether or not it’s in your job description, you weed out the unnecessary and make room for the effective.  You also recognize what you can’t do, and through delegation with an emphasis on contribution, you make others effective with you.  It’s not about getting something done, it’s about getting the right things done.
-            </p>
-        </article>
-        <article>
-            <h3>Manage Your Time</h3>
-            <p id="text">
-                The most important thing you can manage is not people or budgets, but time.  Depending on your role, you may need to manage people or budgets, but you will always have to manage your time.  And what you do with that time determines how effective you are.
-            </p>
-            <p>
-                Time management must be conscious for time is a non-renewable resource.  You must make choices about what you will and won’t do, knowing that every decision you make has the cost of time associated with it.
-            </p>
-        </article>
+        <div class="app">
 
-            
-    
+            <form class="form-horizontal">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" class="form-control taskInput" id="inputEmail3" placeholder="Add Task Here..">
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                
+                <div class="form-group centered">
+                    <button class="btn btn-success addBtn">Add</button>
+                </div>
+            </form>
+
+            <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-6 items">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                <span class="item">Workout</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                <span class="item">Go for a swim</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                <span class="item">Work on thesis</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">
+                                <span class="item">Have a good time</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+            </div>
+                
+        </div>
     </div>
    
    <script src='script.js'></script>
