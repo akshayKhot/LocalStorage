@@ -1,17 +1,38 @@
-var tasks = ["Workout", "Go for a swim", "Work on thesis", "Have a good time", "Build a JQuery app"];
+var tasks = [];
 
 $( document ).ready(function() {
-    localStorage.setItem("prop", "val");
-
-    $.each(tasks, function (i, task) {
-        addTask(task);
-    });
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    if(!tasks) 
+        console.log("Please add some tasks");
+    else {
+        // tasks.push();
+        // localStorage.setItem("tasks", JSON.stringify(tasks));
+        console.log(tasks);
+    }
+    
+    // $.each(mytasks, function (i, task) {
+    //     addTask(task);
+    // });
 
     $(".addBtn").click(function() {
         var task = $(".taskInput").val();
+        updateStorage(task);
         addTask(task);
     });
+
+    $(".clearBtn").click(function() {
+        localStorage.clear();
+    });
 });
+
+function updateStorage(task) {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+    if(tasks)
+        tasks.push(task);
+    else 
+        var tasks = [task];
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 
 function addTask(task) {
