@@ -2,11 +2,20 @@ var tasks = ["Workout", "Go for a swim", "Work on thesis", "Have a good time", "
 
 $( document ).ready(function() {
     localStorage.setItem("prop", "val");
-    console.log(localStorage);
 
     $.each(tasks, function (i, task) {
-        console.log(i + ": " + task);
-        var div = $(`
+        addTask(task);
+    });
+
+    $(".addBtn").click(function() {
+        var task = $(".taskInput").val();
+        addTask(task);
+    });
+});
+
+
+function addTask(task) {
+    var div = $(`
             <div class="checkbox">
                             <label>
                                 <input type="checkbox" value="">
@@ -15,6 +24,4 @@ $( document ).ready(function() {
                         </div>
         `);
         $(".items").append(div);
-    });
-});
-
+}
