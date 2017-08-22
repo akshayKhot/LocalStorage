@@ -4,26 +4,29 @@ $( document ).ready(function() {
     tasks = JSON.parse(localStorage.getItem("tasks"));
     if(!tasks) 
         console.log("Please add some tasks");
-    else {
-        // tasks.push();
-        // localStorage.setItem("tasks", JSON.stringify(tasks));
-        console.log(tasks);
-    }
     
-    // $.each(mytasks, function (i, task) {
-    //     addTask(task);
-    // });
+    updateScreen(tasks);
 
     $(".addBtn").click(function() {
         var task = $(".taskInput").val();
         updateStorage(task);
         addTask(task);
+        $(".taskInput").val("");
     });
 
     $(".clearBtn").click(function() {
         localStorage.clear();
+        updateScreen([]);
     });
 });
+
+function updateScreen(tasks) {
+    if(tasks && tasks.length === 0)
+        $(".items").empty();
+    $.each(tasks, function (i, task) {
+        addTask(task);
+    });
+}
 
 function updateStorage(task) {
     tasks = JSON.parse(localStorage.getItem("tasks"));
